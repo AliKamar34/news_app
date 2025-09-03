@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routing/app_routes.dart';
+import 'package:news_app/features/home/presentation/views/home_view.dart';
 
 class RouterGenerationConfig {
   static GoRouter goRoute = GoRouter(
@@ -10,7 +11,7 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.homeView,
         name: AppRoutes.homeView,
-        builder: (context, state) => const SizedBox(),
+        builder: (context, state) => const HomeView(),
       ),
 
       GoRoute(
