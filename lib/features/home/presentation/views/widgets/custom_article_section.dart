@@ -13,15 +13,15 @@ class CustomArticlesSection extends StatelessWidget {
     return BlocBuilder<GetArticlesCubit, GetArticlesState>(
       builder: (context, state) {
         if (state is GetArticlesSuccess) {
-          return Column(
-            children: [
-              CasouleHeadArticle(article: state.articles.take(6).toList()),
-              Expanded(
-                child: CustomArticlesListView(
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                CasouleHeadArticle(article: state.articles.take(6).toList()),
+                CustomArticlesListView(
                   articles: state.articles.skip(6).toList(),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         } else if (state is GetArticlesFailure) {
           return Center(child: Text(state.errorMessage));

@@ -12,22 +12,32 @@ class CustomHomeLoadingWidget extends StatelessWidget {
     return Skeletonizer(
       child: Column(
         children: [
-          HeadArticleItem(
-            article: ArticleModel(
-              sourceId: '',
-              sourceName: '',
-              title: '',
-              authorName: '',
-              description: '',
-              imageUrl: '',
-              articleUrl: '',
-              content: '',
-              publishedAt: '',
+          HeadArticleItem(article: fakeModelForLoading()),
+          Expanded(
+            child: CustomArticlesListView(
+              articles: [
+                fakeModelForLoading(),
+                fakeModelForLoading(),
+                fakeModelForLoading(),
+              ],
             ),
           ),
-          const Expanded(child: CustomArticlesListView(articles: [])),
         ],
       ),
+    );
+  }
+
+  ArticleModel fakeModelForLoading() {
+    return ArticleModel(
+      sourceId: '',
+      sourceName: '',
+      title: 'xdcfgvsdgfcasfa',
+      authorName: 'sdfasfdasfasf',
+      description: '',
+      imageUrl: '',
+      articleUrl: '',
+      content: '',
+      publishedAt: 'sdfafdasfasf',
     );
   }
 }

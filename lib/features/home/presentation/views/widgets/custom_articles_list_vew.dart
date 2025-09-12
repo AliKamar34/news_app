@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:news_app/core/themes/app_text_styles.dart';
 import 'package:news_app/core/utils/format_date_string.dart';
 import 'package:news_app/features/home/data/models/article_model.dart';
@@ -10,6 +10,8 @@ class CustomArticlesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: articles.length,
       itemBuilder: (context, index) {
         return ListTile(
