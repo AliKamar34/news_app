@@ -15,8 +15,8 @@ class GetArticlesCubit extends Cubit<GetArticlesState> {
     final result = await homeRepo.getArticles();
     result.fold(
       (failure) {
-        log(failure);
-        emit(GetArticlesFailure(errorMessage: failure));
+        log(failure.toString());
+        emit(GetArticlesFailure(errorMessage: failure.toString()));
       },
       (articles) {
         log(articles.toString());

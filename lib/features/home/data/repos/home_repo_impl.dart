@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:news_app/core/errors/dio_error.dart';
+import 'package:news_app/core/errors/failure.dart';
 import 'package:news_app/core/networking/api_endpoints.dart';
 import 'package:news_app/core/networking/dio_helper.dart';
 import 'package:news_app/core/secrets.dart';
@@ -11,7 +12,7 @@ import 'package:news_app/features/home/data/repos/home_repo.dart';
 class HomeRepoImpl extends HomeRepo {
   final DioHelper dioHelper = DioHelper();
   @override
-  Future<Either<String, List<ArticleModel>>> getArticles() async {
+  Future<Either<Failure, List<ArticleModel>>> getArticles() async {
     try {
       final response = await dioHelper.getRequest(
         endPoint: ApiEndpoints.topHeadlines,
@@ -27,10 +28,10 @@ class HomeRepoImpl extends HomeRepo {
     } on DioException catch (e) {
       final message = DioErrorMapper.map(e);
       log(message);
-      return left(message);
+      return left(Failure(errorMessage: message));
     } catch (e) {
       log(e.toString());
-      return left(e.toString());
+      return left(Failure(errorMessage: e.toString()));
     }
   }
 }
