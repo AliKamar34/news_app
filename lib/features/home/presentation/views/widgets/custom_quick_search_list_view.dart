@@ -21,10 +21,7 @@ class CustomQuickSearchListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: titles.length,
           itemBuilder: (context, index) {
-            return CustomQuickSearchButton(
-              title: titles[index],
-              onPressed: () {},
-            );
+            return CustomQuickSearchButton(title: titles[index]);
           },
         ),
       ),

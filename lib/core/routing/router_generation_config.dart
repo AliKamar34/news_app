@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/features/home/presentation/views/home_view.dart';
+import 'package:news_app/features/search/presentation/views/search_result_view.dart';
 
 class RouterGenerationConfig {
   static GoRouter goRoute = GoRouter(
@@ -22,7 +23,7 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.searchResultView,
         name: AppRoutes.searchResultView,
-        builder: (context, state) => const SizedBox(),
+        builder: (context, state) => const SearchResultView(),
       ),
       GoRoute(
         path: AppRoutes.articleDetailsView,
