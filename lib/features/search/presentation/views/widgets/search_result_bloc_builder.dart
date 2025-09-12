@@ -12,7 +12,11 @@ class SearchResultBlocBuilder extends StatelessWidget {
     return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         if (state is SearchSuccess) {
-          return CustomArticleSearchListView(articles: state.articles);
+          if (state.articles.isEmpty) {
+            return const Center(child: Text('No Result Found'));
+          } else {
+            return CustomArticleSearchListView(articles: state.articles);
+          }
         } else if (state is SearchFailure) {
           return Center(child: Text(state.errorMessage));
         } else {
