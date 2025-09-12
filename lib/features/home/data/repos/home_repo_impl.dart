@@ -14,7 +14,7 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<String, List<ArticleModel>>> getArticles() async {
     try {
       final response = await dioHelper.getRequest(
-        url: '${ApiEndpoints.baseUrl}${ApiEndpoints.topHeadlines}',
+        endPoint: ApiEndpoints.topHeadlines,
         queryParameters: {'country': 'us', 'apiKey': Secrets.apiKey},
       );
 
