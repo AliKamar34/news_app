@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news_app/core/localization/locale_keys.g.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/themes/app_text_styles.dart';
 import 'package:news_app/core/utils/format_date_string.dart';
@@ -77,7 +79,7 @@ class ArticleDetailsView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: CustomButton(
-                  title: 'title',
+                  title: LocaleKeys.show_full_article.tr(),
                   onPressed: () {
                     GoRouter.of(context).pushNamed(
                       AppRoutes.fullArticleView,

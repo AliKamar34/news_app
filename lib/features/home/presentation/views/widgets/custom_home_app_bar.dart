@@ -21,11 +21,22 @@ class CustomHomeAppBar extends StatelessWidget {
             LocaleKeys.explore.tr(),
             style: AppTextStyle.styleSemiBold30(context),
           ),
+          const Spacer(),
           IconButton(
             onPressed: () {
               GoRouter.of(context).pushNamed(AppRoutes.searchView);
             },
             icon: const Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {
+              if (context.locale == const Locale('en')) {
+                context.setLocale(const Locale('ar'));
+              } else {
+                context.setLocale(const Locale('en'));
+              }
+            },
+            icon: const Icon(Icons.language),
           ),
         ],
       ),

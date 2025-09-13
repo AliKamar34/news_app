@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/core/localization/locale_keys.g.dart';
 import 'package:news_app/features/home/presentation/views/widgets/custom_quick_search_button.dart';
@@ -8,10 +9,10 @@ class CustomQuickSearchListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> titles = [
-      LocaleKeys.business,
-      LocaleKeys.technology,
-      LocaleKeys.entertainment,
-      LocaleKeys.travel,
+      LocaleKeys.business.tr(),
+      LocaleKeys.technology.tr(),
+      LocaleKeys.entertainment.tr(),
+      LocaleKeys.travel.tr(),
     ];
     return Padding(
       padding: const EdgeInsetsDirectional.only(start: 16),

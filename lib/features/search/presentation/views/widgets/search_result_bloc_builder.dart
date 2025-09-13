@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/core/localization/locale_keys.g.dart';
 import 'package:news_app/features/search/presentation/manager/cubit/search_cubit.dart';
 import 'package:news_app/features/search/presentation/views/widgets/custom_article_search_result_listview.dart';
 import 'package:news_app/features/search/presentation/views/widgets/custom_search_loading.dart';
@@ -13,7 +15,7 @@ class SearchResultBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is SearchSuccess) {
           if (state.articles.isEmpty) {
-            return const Center(child: Text('No Result Found'));
+            return Center(child: Text(LocaleKeys.no_results.tr()));
           } else {
             return CustomArticleSearchListView(articles: state.articles);
           }

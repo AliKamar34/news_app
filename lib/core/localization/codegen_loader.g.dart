@@ -22,7 +22,9 @@ class CodegenLoader extends AssetLoader{
   "entertainment": "ترفيه",
   "cancel": "إلغاء",
   "search_result": "نتيجة البحث",
-  "no_results": "لا يوجد نتائج"
+  "no_results": "لا يوجد نتائج",
+  "show_full_article": "إعرض المقال كامل",
+  "search": "بحث"
 };
 static const Map<String,dynamic> _en = {
   "explore": "Explore",
@@ -32,7 +34,9 @@ static const Map<String,dynamic> _en = {
   "entertainment": "Entertainment",
   "cancel": "Cancel",
   "search_result": "Search result",
-  "no_results": "No result"
+  "no_results": "No result",
+  "show_full_article": "Show Full Article",
+  "search": "Search"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

@@ -11,5 +11,7 @@ abstract class  LocaleKeys {
   static const cancel = 'cancel';
   static const search_result = 'search_result';
   static const no_results = 'no_results';
+  static const show_full_article = 'show_full_article';
+  static const search = 'search';
 
 }

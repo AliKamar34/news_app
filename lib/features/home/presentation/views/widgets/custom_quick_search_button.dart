@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -28,7 +27,7 @@ class CustomQuickSearchButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
         ),
         child: Text(
-          title.tr(),
+          title,
           style: AppTextStyle.styleSemiBold14(
             context,
           ).copyWith(color: AppColors.blackColor),
