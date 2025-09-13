@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/features/home/data/models/article_model.dart';
 import 'package:news_app/features/home/presentation/views/article_details_view.dart';
+import 'package:news_app/features/home/presentation/views/full_article_web_view.dart';
 import 'package:news_app/features/home/presentation/views/home_view.dart';
 import 'package:news_app/features/search/presentation/views/search_result_view.dart';
 import 'package:news_app/features/search/presentation/views/search_view.dart';
@@ -32,6 +33,12 @@ class RouterGenerationConfig {
         name: AppRoutes.articleDetailsView,
         builder: (context, state) =>
             ArticleDetailsView(article: state.extra as ArticleModel),
+      ),
+      GoRoute(
+        path: AppRoutes.fullArticleView,
+        name: AppRoutes.fullArticleView,
+        builder: (context, state) =>
+            FullArticleWebView(url: state.extra as String),
       ),
     ],
   );

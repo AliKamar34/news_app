@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/themes/app_text_styles.dart';
 import 'package:news_app/core/utils/format_date_string.dart';
 import 'package:news_app/core/widgets/custom_button.dart';
@@ -74,7 +76,15 @@ class ArticleDetailsView extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.all(15),
-                child: CustomButton(title: 'title', onPressed: () {}),
+                child: CustomButton(
+                  title: 'title',
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(
+                      AppRoutes.fullArticleView,
+                      extra: article.articleUrl,
+                    );
+                  },
+                ),
               ),
             ),
           ],
