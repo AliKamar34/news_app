@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routing/app_routes.dart';
+import 'package:news_app/features/home/data/models/article_model.dart';
+import 'package:news_app/features/home/presentation/views/article_details_view.dart';
 import 'package:news_app/features/home/presentation/views/home_view.dart';
 import 'package:news_app/features/search/presentation/views/search_result_view.dart';
 import 'package:news_app/features/search/presentation/views/search_view.dart';
@@ -29,7 +30,8 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.articleDetailsView,
         name: AppRoutes.articleDetailsView,
-        builder: (context, state) => const SizedBox(),
+        builder: (context, state) =>
+            ArticleDetailsView(article: state.extra as ArticleModel),
       ),
     ],
   );
